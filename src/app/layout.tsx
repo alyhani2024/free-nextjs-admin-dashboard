@@ -1,11 +1,9 @@
-"use client";
-import "jsvectormap/dist/css/jsvectormap.css";
-import "flatpickr/dist/flatpickr.min.css";
-import "@/css/satoshi.css";
-import "@/css/style.css";
-import React, { useEffect, useState } from "react";
-import Loader from "@/components/common/Loader";
+"use client"
 
+import { Metadata } from 'next';
+import '../styles/index.css';
+import Loader from '@/components/common/Loader';
+import { useEffect, useState } from 'react';
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,3 +28,4 @@ export default function RootLayout({
     </html>
   );
 }
+

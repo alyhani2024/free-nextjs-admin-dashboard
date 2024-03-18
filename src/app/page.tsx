@@ -1,19 +1,33 @@
-import ECommerce from "@/components/Dashboard/E-commerce";
+
 import { Metadata } from "next";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { Providers } from "./providers";
+import SigninPage from "@/components/signin/page";
+import SignupPage from "@/components/signup/page";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title:
-    "Next.js E-commerce Dashboard | TailAdmin - Next.js Dashboard Template",
-  description: "This is Next.js Home for TailAdmin Dashboard Template",
+  title: "Safary",
+  description: "Tour Guide Application",
+  // other metadata
 };
 
-export default function Home() {
+  function Home() {
   return (
     <>
-      <DefaultLayout>
-        <ECommerce />
-      </DefaultLayout>
+      <html suppressHydrationWarning lang="en">
+      <body className={`bg-[#FCFCFC] dark:bg-black `}>
+        <Providers>
+          { true ? ( 
+            <SigninPage />
+          ) : ( 
+            <SignupPage />
+          )}
+        </Providers>
+      </body>
+    </html>
     </>
   );
 }
+
+export default Home
